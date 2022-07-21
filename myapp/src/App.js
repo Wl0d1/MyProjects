@@ -19,11 +19,21 @@ function App () {
 
     const item = {
       id: Math.floor(Math.random() * 1000),
-      value: newItem
-      if 
-        
-      }
+      value: newItem 
     };
+
+    const toggleComplete = id => 
+    setItems
+    (items.map(
+      (item, k) =>
+         k === id
+         ? {
+          ...item,
+      complete: !item.complete 
+    }
+      : item
+      )
+    );
 
     // const complete = {
     //   item.toggle('complete');
@@ -59,8 +69,19 @@ function App () {
         )
       })}  
     </ul>
+    <div {items.map({item.id, complete}, i)
+    <div key={item.id} onClick {() => toggleComplete(i)}
+    style={{
+      textDecoration: complete ? "line-through" : ""
+    }}> {item.id} </div>
   </div>
   )
 };
   
 export default App;
+
+// <div {items.map({item.id, complete}, i)
+// <li key={item.id} onClick {() => toggleComplete(i)}
+// style={{
+//   textDecoration: complete ? "line-through" : ""
+// }}> {item.id} </div>
