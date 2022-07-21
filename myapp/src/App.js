@@ -2,14 +2,6 @@ import React, {useState} from 'react';
 import './App.css';
 // import styled from 'styled-components'
 
-// const Wrapper = styled.div`
-// background-color: #f7f8fa;
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// width: 100%;
-// height: 100vh;
-// `;
 
 function App () {
 
@@ -28,7 +20,14 @@ function App () {
     const item = {
       id: Math.floor(Math.random() * 1000),
       value: newItem
+      if 
+        
+      }
     };
+
+    // const complete = {
+    //   item.toggle('complete');
+    // }
 
     setItems(oldList => [...oldList, item]);
     setNewItem("");
@@ -44,17 +43,18 @@ function App () {
       <h1>To Do list </h1>
       <input 
       type="text"
-      placeholder="dodaj cos"
+      placeholder="Title"
       value= {newItem}
       onChange={e => setNewItem(e.target.value)} 
+      className="search-input"
       />
 
-      <button onClick={() => addItem()}> Add </button>
+      <button onClick={() => addItem()} className="search-btn"> Add </button>
 
       <ul>
       {items.map(item => {
         return (
-          <li key={item.id}>{item.value} <button onClick={() => deleteBtn (item.id)}><i class="fa-solid fa-xmark"></i></button>
+          <li key={item.id}>{item.value} <button onClick={() => deleteBtn (item.id)} className="deleteBtn"><i className="fa-solid fa-xmark"></i></button>
           </li>
         )
       })}  
