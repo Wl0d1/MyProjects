@@ -71,7 +71,7 @@ const checkEmail = (email) => {
 }
 
 const checkErrors = () => {
-    const allInputs = document.querySelectorAll ('.form-box');
+    const allInputs = document.querySelectorAll('.form-box');
     let errorCount = 0;
 
     allInputs.forEach(el => {

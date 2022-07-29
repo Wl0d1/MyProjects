@@ -11,8 +11,8 @@ const textarea = document.querySelector('#text');
 const category = document.querySelector('#category');
 const error = document.querySelector('.error');
 
-let selectedValue;
-let cardID = 0;
+let selectedValue; // reprezentacja wybranego option
+let cardID = 0; // zmienna przechowujaca dane unikalne. W momencie kiedy dajemy karte zwiekszamy id . jest po to zeby usunac notatke. zeby wiedziec ktora usunac. Nadalismy notatce ID 
 
 const addNote = () => { 
     notePanel.style.display = 'flex'
