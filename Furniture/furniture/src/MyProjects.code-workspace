@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "..\\..\\.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Programowanie",
+    "editor.accessibilityPageSize": 10,
+    "editor.fontSize": 14,
+    "editor.tabSize": 4
+  }
+}
