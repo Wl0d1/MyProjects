@@ -73,15 +73,15 @@ ul li:nth-child(odd) {
     background: #f9f9f9;
 }
 .completed {
-    background: rgb(151, 8, 8);
+    background: rgb(212, 183, 183);
     color: rgb(100, 18, 18);
     text-decoration: line-through;
+
 }
 
-li .deleteBtn {
+.deleteBtn {
     color: rgb(179, 44, 203);
     float: right;
-
 }
 
 .deleteBtn:hover {
