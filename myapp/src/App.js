@@ -43,21 +43,6 @@ function App () {
       setItems(newArrayOfItems)  
     } 
 
-    
-
-    // const toggleComplete = id => 
-    // // setItems
-    // // (items.map(
-    // //   (item, k) =>
-    // //      k === id
-    // //      ? {
-    // //       ...item,
-    // //   complete: !item.complete 
-    // // }
-    // //   : item
-    // //   )
-    // // );
-
 
     function deleteBtn (id) {
       const newArray = items.filter(item => item.id !== id);
@@ -82,7 +67,7 @@ function App () {
       <ul>
       {items.map((item, completed) => {
         return (
-          <li onClick={() => toggleComplete(item.id)} className={item.completed ? `${completed}` : ""} key={item.id}>{item.value} <button onClick={() => deleteBtn(item.id)} className="deleteBtn"><i className="fa-solid fa-xmark"></i></button>
+          <li key={item.id} onClick={() => toggleComplete(item.id)} style={{textDecoration: item.completed ? `${completed}` : ''}}>{item.value} <button onClick={() => deleteBtn(item.id)} className="deleteBtn"><i className="fa-solid fa-xmark"></i></button>
           </li>
         )
       })}  
@@ -95,3 +80,5 @@ function App () {
 export default App;
 
 // className={item.completed ? false  : "" }
+
+//onClick={() => toggleComplete(item.id)} className={item.completed ? `${completed}` : ""} 
