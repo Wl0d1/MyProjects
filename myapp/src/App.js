@@ -67,7 +67,7 @@ function App () {
       <ul>
       {items.map((item, completed) => {
         return (
-          <li key={item.id} onClick={() => toggleComplete(item.id)} style={{textDecoration: item.completed ? `${completed}` : ''}}>{item.value} <button onClick={() => deleteBtn(item.id)} className="deleteBtn"><i className="fa-solid fa-xmark"></i></button>
+          <li key={item.id} onClick={() => toggleComplete(item.id)} className={item.completed ? 'completed' : ''  }>{item.value} <button onClick={() => deleteBtn(item.id)} className="deleteBtn"><i className="fa-solid fa-xmark"></i></button>
           </li>
         )
       })}  
