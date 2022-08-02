@@ -33,7 +33,7 @@ function App () {
           
           return {
           ...item,
-          completed: true
+          completed: !item.completed
         }
         } else { 
           return item
@@ -44,13 +44,12 @@ function App () {
     } 
 
 
-    function deleteBtn (id) {
-      const newArray = items.filter(item => item.id !== id);
-      setItems(newArray);
-    }
-    console.log(items)
+    const deleteHandle = ({id}) => {
+      setItems(items.filter((item) => item.id !== id));
+ 
+    };
 
-
+    
   return(
     <div className="App">
       <h1>To Do list </h1>
@@ -63,19 +62,22 @@ function App () {
       />
 
       <button onClick={() => addItem()} className="search-btn"> Add </button>
+      
 
       <ul>
-      {items.map((item, completed) => {
-        return (
-          <li key={item.id} onClick={() => toggleComplete(item.id)} className={item.completed ? 'completed' : ''  }>{item.value} <button onClick={() => deleteBtn(item.id)} className="deleteBtn"><i className="fa-solid fa-xmark"></i></button>
+      {items.map((item) => {
+       return (
+          <li key={item.id} onClick={() => toggleComplete(item.id)} className={item.completed ? 'completed' : ''  }>{item.value} 
+            <button type='button' className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button>
           </li>
-        )
+       )
       })}  
     </ul>
 
   </div>
   )
 };
+
   
 export default App;
 
