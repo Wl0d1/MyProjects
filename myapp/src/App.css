@@ -73,7 +73,7 @@ ul li:nth-child(odd) {
     background: #f9f9f9;
 }
 li .completed {
-    background: #888;
+    background: rgb(151, 8, 8);
     color: rgb(100, 18, 18);
     text-decoration: line-through;
 }
