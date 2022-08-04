@@ -7,7 +7,7 @@ function App () {
 
 
 
-  const [newItem, setNewItem] = useState("");
+  const [newItem, setNewItem] = useState([""]);
   const [items, setItems] = useState([]);
 
 
@@ -27,29 +27,28 @@ function App () {
       setNewItem("");
     }
     
+    
+    
     function toggleComplete (id) {
       const newArrayOfItems = items.map(item => {
         if (item.id === id) { 
           
           return {
-          ...item,
-          completed: !item.completed
-        }
+            ...item,
+            completed: !item.completed
+          }
         } else { 
           return item
+          
         } 
       }) 
-      
-      setItems(newArrayOfItems)  
+      //  setItems(newArrayOfItems) 
     } 
-
-
-    const deleteHandle = ({id}) => {
-      setItems(items.filter((item) => item.id !== id));
- 
+    
+    const deleteHandle = (id) => {
+          setItems(items.filter((item) => item.id !== id));
     };
 
-    
   return(
     <div className="App">
       <h1>To Do list </h1>
@@ -65,10 +64,11 @@ function App () {
       
 
       <ul>
-      {items.map((item) => {
+      {items.map((item, color) => {
        return (
-          <li key={item.id} onClick={() => toggleComplete(item.id)} className={item.completed ? 'completed' : ''  }>{item.value} 
-            <button type='button' className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button>
+          <li 
+          onClick={() => toggleComplete(item.id)} className={item.completed ? 'completed' : ''}>
+          {item.value}  <button className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button>
           </li>
        )
       })}  
@@ -84,3 +84,5 @@ export default App;
 // className={item.completed ? false  : "" }
 
 //onClick={() => toggleComplete(item.id)} className={item.completed ? `${completed}` : ""} 
+
+//  <button type='checkbox' className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button>
