@@ -76,8 +76,8 @@ ul li:nth-child(odd) {
     background: rgb(212, 183, 183);
     color: rgb(100, 18, 18);
     text-decoration: line-through;
-
 }
+
 
 .deleteBtn {
     color: rgb(179, 44, 203);
@@ -87,3 +87,4 @@ ul li:nth-child(odd) {
 .deleteBtn:hover {
     color:red;
 }
+
