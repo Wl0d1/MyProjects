@@ -42,12 +42,14 @@ function App () {
           
         } 
       }) 
-      //  setItems(newArrayOfItems) 
-    } 
-    
-    const deleteHandle = (id) => {
-          setItems(items.filter((item) => item.id !== id));
+       setItems(newArrayOfItems) 
+      } 
+      
+      function deleteHandle (id) {
+        setItems(items.filter((item) => item.id !== id));
+        console.log('click')
     };
+
 
   return(
     <div className="App">
@@ -66,7 +68,7 @@ function App () {
       <ul>
       {items.map((item, color) => {
        return (
-          <li 
+          <li key = {item.id}
           onClick={() => toggleComplete(item.id)} className={item.completed ? 'completed' : ''}>
           {item.value}  <button className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button>
           </li>
