@@ -84,7 +84,4 @@ ul li:nth-child(odd) {
     float: right;
 }
 
-.deleteBtn:hover {
-    color:red;
-}
 
