@@ -5,10 +5,8 @@ import './App.css';
 
 function App () {
 
-
-
   const [newItem, setNewItem] = useState([""]);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]); // modyfikowana 1 wartość przez 1 metodę.  [items,setItems]-destrukturyzacja tablicy
 
 
   function addItem() {
@@ -21,37 +19,43 @@ function App () {
       id: Math.floor(Math.random() * 1000),
       value: newItem, 
       completed: false
+
     };
     
       setItems(oldList => [...oldList, item]);
       setNewItem("");
     }
     
+    const deleteHandle = (id) => {
+      let updatedItems = items.filter((item) => item.id !== id)
+      setItems(updatedItems)                                // jako argument podawany jest nowy stan
+      // setItems(prevState => prevState.filter(item => item.id !== i)
+      };
     
     
-    function toggleComplete (id) {
-      const newArrayOfItems = items.map(item => {
+    const toggleComplete = (id) => {
+      let newArrayOfItems = items.map(item => {
         if (item.id === id) { 
           
           return {
             ...item,
             completed: !item.completed
+            
           }
         } else { 
           return item
           
         } 
       }) 
-       setItems(newArrayOfItems) 
+     setItems(newArrayOfItems) 
       } 
+
+
       
-      function deleteHandle (id) {
-        setItems(items.filter((item) => item.id !== id));
-        console.log('click')
-    };
 
-
+    console.log(items, 'dupa')
   return(
+
     <div className="App">
       <h1>To Do list </h1>
       <input 
@@ -65,25 +69,28 @@ function App () {
       <button onClick={() => addItem()} className="search-btn"> Add </button>
       
 
-      <ul>
-      {items.map((item, color) => {
-       return (
-          <li key = {item.id}
-          onClick={() => toggleComplete(item.id)} className={item.completed ? 'completed' : ''}>
-          {item.value}  <button className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button>
-          </li>
+      <ul >
+      {items.map((item) => {
+        return ( 
+          <div key = {item.id} className='items2' >
+          <li
+          onClick={() => toggleComplete(item.id)} 
+          className={item.completed ? 'completed' : ''}>{item.value} 
+          </li>       
+          <button className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button> 
+          </div>    
        )
-      })}  
-    </ul>
-
-  </div>
+       
+      })}
+      </ul>  
+    </div>
   )
 };
 
   
 export default App;
-
-// className={item.completed ? false  : "" }
+ 
+// className={item.completed ? false  : "" }        key = {item.id}
 
 //onClick={() => toggleComplete(item.id)} className={item.completed ? `${completed}` : ""} 
 

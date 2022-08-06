@@ -1,9 +1,8 @@
-import Setup from './conditional/multiple-return'
+import Setup from './conditional/short-circuit'
 
 function App() {
   return (
     <div className = 'container'>
-    <h3> dsadsadas</h3>
       <Setup />
     </div>
   );
