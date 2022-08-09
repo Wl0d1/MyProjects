@@ -72,12 +72,12 @@ function App () {
       <ul >
       {items.map((item) => {
         return ( 
-          <div key = {item.id} className='items2' >
+          <div key = {item.id} className='items2' > 
           <li
           onClick={() => toggleComplete(item.id)} 
           className={item.completed ? 'completed' : ''}>{item.value} 
           </li>       
-          <button className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button> 
+          <button className='far' onClick={() => deleteHandle(item.id)}>X</button> 
           </div>    
        )
        
@@ -95,3 +95,5 @@ export default App;
 //onClick={() => toggleComplete(item.id)} className={item.completed ? `${completed}` : ""} 
 
 //  <button type='checkbox' className="deleteBtn" onClick={() => deleteHandle(item.id)}><i className="fa-solid fa-xmark"></i></button>
+
+// {flexbox w css - dostosowac pozostale komponenty w css }

@@ -19,7 +19,7 @@ body {
     font-family: 'Montserrat', 'sens-serif';
     background-color: royalblue;
     width: 100%;
-    max-width: 1500px;
+    max-width: 100vw;
 }
 
 .App h1 {
@@ -59,8 +59,12 @@ body {
     transition: 5s;
 }
 
+
+
 ul li {
+    display: inline-block;
     list-style-type: none;
+  
     cursor: pointer;
     position: relative;
     padding: 10px 5px 12px 40px;
@@ -69,21 +73,37 @@ ul li {
     transition: 0.2s;
 }
 
+.items2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    background: #0dddd3;
+    border:outset;
+}
+
+
+
 ul li:nth-child(odd) {
-    background: #f9f9f9;
+    background: #0dddd3;
+    width: 100%;
+    border:outset;
 }
 .completed {
     background: rgb(167, 26, 26);
     color: rgb(100, 18, 18);
     text-decoration: line-through;
+    
 }
 
-.deleteBtn {
-    position: absolute;
-    margin-top: -27px;
-    left: 850px;
-    color: rgb(179, 44, 203); 
+.far {
+    position: relative;
+    color: rgb(168, 189, 125); 
     z-index: 1;
+
 }
+
+
+
 
 
