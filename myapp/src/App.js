@@ -9,6 +9,8 @@ function App () {
   const [items, setItems] = useState([]); // modyfikowana 1 wartość przez 1 metodę.  [items,setItems]-destrukturyzacja tablicy
 
 
+
+
   function addItem() {
     if (!newItem) {
       alert("wpisz cos gosciu")
@@ -50,8 +52,7 @@ function App () {
      setItems(newArrayOfItems) 
       } 
 
-
-      
+   
 
     console.log(items, 'dupa')
   return(
@@ -78,6 +79,7 @@ function App () {
           className={item.completed ? 'completed' : ''}>{item.value} 
           </li>       
           <button className='far' onClick={() => deleteHandle(item.id)}>X</button> 
+
           </div>    
        )
        
