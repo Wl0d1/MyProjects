@@ -11,6 +11,7 @@ const Info = () => {
             <h4 className='name'>{name}</h4>
             <p className='job'>{job.toUpperCase()}</p>
         </article>
+        
     );
 };
 
