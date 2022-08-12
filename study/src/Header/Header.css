@@ -1,0 +1,12 @@
+h1 {
+    font-size: 66px;
+  }
+  .underline {
+    border-top-style: solid;
+    margin-right: auto;
+    margin-left: auto;
+    color: rgb(114, 114, 204);
+    width: 25%;
+    height: 0.1vh;
+  }
+  
