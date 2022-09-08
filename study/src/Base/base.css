@@ -1,13 +1,10 @@
 .name {
-    text-transform: capitalize;
-    font-size: 30px;
-  }
+  text-transform: capitalize;
+  font-size: 30px;
+}
 
-
-  
-  .job {
-    font-size: 25px;
-    color: rgb(98, 98, 209)
-  }
-  
-  
+.job {
+  font-size: 25px;
+  color: rgb(98, 98, 209);
+  text-transform: uppercase;
+}
